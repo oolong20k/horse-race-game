@@ -1,0 +1,315 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f9f4e7;
+  --foreground: #1d2428;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.nav-link {
+  align-items: center;
+  border-radius: 6px;
+  color: #3e4b3c;
+  display: inline-flex;
+  font-size: 0.92rem;
+  font-weight: 800;
+  min-height: 44px;
+  padding: 0 0.75rem;
+}
+
+.nav-link:hover {
+  background: #eef5dc;
+}
+
+.panel {
+  background: #fffdf5;
+  border: 1px solid #d9bd7f;
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgb(60 45 20 / 0.08);
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .panel {
+    padding: 1.25rem;
+  }
+}
+
+.label {
+  color: #5d695e;
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.text-input {
+  background: #ffffff;
+  border: 1px solid #c9d7bf;
+  border-radius: 6px;
+  color: #1d2428;
+  margin-top: 0.35rem;
+  min-height: 44px;
+  outline: none;
+  padding: 0 0.8rem;
+  width: 100%;
+}
+
+.text-input:focus {
+  border-color: #2f7d68;
+  box-shadow: 0 0 0 3px rgb(47 125 104 / 0.18);
+}
+
+.primary-button,
+.secondary-button,
+.icon-button {
+  align-items: center;
+  border-radius: 6px;
+  display: inline-flex;
+  font-weight: 900;
+  justify-content: center;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.primary-button {
+  background: #be4f2f;
+  color: #fffdf5;
+  padding: 0 1rem;
+}
+
+.primary-button:hover:not(:disabled) {
+  background: #a64027;
+}
+
+.secondary-button {
+  background: #ffffff;
+  border: 1px solid #c9d7bf;
+  color: #243b31;
+  padding: 0 1rem;
+}
+
+.secondary-button:hover:not(:disabled) {
+  background: #eef5dc;
+}
+
+.icon-button {
+  background: #ffffff;
+  border: 1px solid #c9d7bf;
+  color: #243b31;
+  flex: 0 0 auto;
+  font-size: 1.05rem;
+  width: 44px;
+}
+
+.icon-button:hover {
+  background: #eef5dc;
+}
+
+.icon-button.danger:hover {
+  background: #fff1ee;
+  border-color: #d56a4e;
+}
+
+.error-text {
+  color: #b3261e;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 0.4rem;
+}
+
+.character-card,
+.history-row {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e3d4ae;
+  border-radius: 8px;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  min-height: 70px;
+  padding: 0.75rem;
+}
+
+.character-card {
+  flex-wrap: wrap;
+}
+
+.empty-state {
+  background: #fffdf5;
+  border: 1px dashed #c9aa67;
+  border-radius: 8px;
+  color: #5d695e;
+  font-weight: 800;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.race-board {
+  background:
+    linear-gradient(90deg, transparent calc(100% - 11px), #d7202a calc(100% - 11px), #d7202a calc(100% - 7px), transparent calc(100% - 7px)),
+    repeating-linear-gradient(0deg, #f2cd8f 0, #f2cd8f 4px, #e8b66f 4px, #e8b66f 8px);
+  border: 3px solid #2f7d68;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 6px rgb(255 255 255 / 0.42);
+  overflow: hidden;
+  padding: 1rem 0.75rem;
+  position: relative;
+}
+
+.finish-line {
+  background:
+    repeating-conic-gradient(#1d2428 0 25%, #ffffff 0 50%) 50% / 18px 18px;
+  bottom: 0.75rem;
+  position: absolute;
+  right: 0.85rem;
+  top: 0.75rem;
+  width: 12px;
+  z-index: 1;
+}
+
+.race-lane {
+  background:
+    linear-gradient(90deg, rgb(255 255 255 / 0.55), rgb(255 255 255 / 0.2)),
+    linear-gradient(0deg, transparent calc(100% - 2px), rgb(47 125 104 / 0.28) calc(100% - 2px));
+  border-radius: 8px;
+  height: 66px;
+  overflow: hidden;
+  position: relative;
+}
+
+.runner {
+  align-items: center;
+  background: #fffdf5;
+  border: 2px solid #243b31;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgb(41 37 29 / 0.16);
+  display: inline-flex;
+  gap: 0.45rem;
+  left: 0;
+  max-width: 126px;
+  min-height: 48px;
+  padding: 0 0.55rem;
+  position: absolute;
+  top: 9px;
+  width: 126px;
+  z-index: 2;
+}
+
+.runner-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.runner-name {
+  color: #243b31;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 900;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event-pop {
+  font-size: 2rem;
+  left: 32px;
+  pointer-events: none;
+  position: absolute;
+  top: -10px;
+}
+
+.race-overlay {
+  align-items: center;
+  background: rgb(29 36 40 / 0.75);
+  border-radius: 8px;
+  color: #fffdf5;
+  display: flex;
+  font-size: clamp(4rem, 15vw, 9rem);
+  font-weight: 1000;
+  inset: 5.5rem 1rem 1rem;
+  justify-content: center;
+  position: fixed;
+  z-index: 50;
+}
+
+.winner-banner {
+  background: #fffdf5;
+  border: 2px solid #be4f2f;
+  border-radius: 8px;
+  box-shadow: 0 22px 70px rgb(29 36 40 / 0.22);
+  left: 50%;
+  max-width: calc(100vw - 2rem);
+  padding: 1.25rem;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  z-index: 60;
+}
+
+.winner-banner h2 {
+  color: #243b31;
+  font-size: clamp(1.6rem, 6vw, 2.6rem);
+  font-weight: 1000;
+  line-height: 1.1;
+}
+
+.confetti {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .race-board {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .race-lane {
+    height: 58px;
+  }
+
+  .runner {
+    max-width: 106px;
+    min-height: 44px;
+    top: 7px;
+    width: 106px;
+  }
+
+  .runner-icon {
+    font-size: 1.45rem;
+  }
+
+  .runner-name {
+    font-size: 0.78rem;
+  }
+
+  .event-pop {
+    font-size: 1.55rem;
+  }
+}
